@@ -129,8 +129,6 @@ contains(names, 'Colt', function(result){
 //Code Here
 function uniq(arr, cb) {
   cb(arr);
-  // indexOf()
-  // Push()
 }
 
 console.log(removeDuplicates(uniq));

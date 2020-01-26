@@ -74,7 +74,7 @@ last(names, function(lastName){
 
 //Code Here
 function multiply(num1, num2, cb) {
-  cb(arr[2*3]);
+  cb(num1 * num2);
 }
 
 console.log(multiply);
@@ -97,14 +97,13 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
- function contains(arr, janaya, cb) {
-  console.log(janaya);
-   if(arr === true) {
-    cb(true);
-   }  else {
-   } (arr === false); {
-     cb(false);
-   }
+function contains(array, name, callback){
+  for (let i = 0; i < array.length; i++){
+  if (array[i]=== name){
+    return callback(true)
+  } 
+    return callback(false)
+}
 }
  
 // Do not edit the code below.
@@ -127,11 +126,21 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-function uniq(arr, cb) {
-  cb(arr);
+function uniq(array, callback)
+{
+ for (var i = 0; i < array.length; i++)
+ {
+   for(var j = 0; j < array.length; j++)
+   {
+     if (array[i] === array[j] && i !== j)
+     {
+       array.splice(j, 1);
+       j--;
+     }
+ }
 }
-
-console.log(removeDuplicates(uniq));
+ return callback(array);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -149,9 +158,15 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-function each(arr, cb) {
-   cb(arr);
+function each(name, callback){
+  for (let i = 0; i < name.length; i++){
+    callback(name[i], i)
+  }
 }
+// Do not edit the code below.
+each(names, function(item, indice){
+  console.log('The item in the ' + indice + ' position is ' + item)
+});
 
 
 
